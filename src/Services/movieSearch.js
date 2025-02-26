@@ -1,14 +1,17 @@
 import axiosInstance from "../Helpers/AxiosInstance";
 
-const movieSearch = async (searchTerm) => {
+const movieSearch = async (searchTerm, page) => {
     try {
         const response = await axiosInstance.get("", {
-            params: { s: searchTerm },
+            params: { 
+                s: searchTerm,
+                page: page
+            }
         });
-        return response.data; // ✅ Return the API response
+        return response.data;
     } catch (error) {
         console.error("Error fetching movies:", error);
-        return null; // ✅ Return null or throw error if needed
+        return null;
     }
 };
 

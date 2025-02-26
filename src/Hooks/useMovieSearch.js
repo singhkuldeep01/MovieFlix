@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import movieSearch from "../Services/movieSearch";
 
-const useMovieSearch = (searchTerm) => {
+const useMovieSearch = (searchTerm, page) => {
   return useQuery({
-    queryKey: ['movie', searchTerm],
-    queryFn: () => movieSearch(searchTerm),
+    queryKey: ['movie', searchTerm, page],
+    queryFn: () => movieSearch(searchTerm, page),
     retry: 3,
     retryDelay: 2000,
     cacheTime: 1000 * 60 * 2,
