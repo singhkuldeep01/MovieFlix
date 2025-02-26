@@ -5,7 +5,7 @@ import SearchBar from '../SearchBar/SearchBar';
 function Navbar() {
     const [showSearchBar , setShowSearchBar] = React.useState(false);
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-300 shadow-sm fixed w-full z-10">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -23,9 +23,9 @@ function Navbar() {
   {
     showSearchBar ?
         <SearchBar/>
-    : <div className="navbar-center">
-    <a className="btn btn-ghost text-xl">MovieFlix</a>
-  </div>
+    : <a className={`btn btn-ghost text-xl font-bold tracking-tighter transition-all duration-300 ${showSearchBar ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0'}`}>
+          <span className="text-primary">Movie</span>Flix
+        </a>
   }
   <div className="navbar-end">
     <button className="btn btn-ghost btn-circle" onClick={() => setShowSearchBar(!showSearchBar)}>

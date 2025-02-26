@@ -3,7 +3,7 @@ import React from 'react'
 function ThemeSelector() {
   return (
     <div className="dropdown">
-    <div tabIndex={0} role="button" className="btn m-1">
+    <div tabIndex={0} role="button" className="btn m-1 text-primary">
       Theme
       <svg
         width="12px"
