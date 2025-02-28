@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import MovieCard from "../MovieCard/MovieCard";
 import { useMovieContext } from "../../Context/movieContext";
-import useMovieSearch from "../../Hooks/UseMovieSearch";
+import { useMovieSearch } from "../../Hooks/useMovieSearch";
 import Paging from "../Paging/Paging";
 import NoMoviesFound from "../NoMoviesFound/NoMoviesFound";
 import { useState } from "react";
