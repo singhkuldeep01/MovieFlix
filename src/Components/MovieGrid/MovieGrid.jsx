@@ -6,11 +6,17 @@ import Paging from "../Paging/Paging";
 import NoMoviesFound from "../NoMoviesFound/NoMoviesFound";
 import { useState } from "react";
 import SkeletonLoaderGrid from "../Skeletons/SkeletonLoaderGrid";
-
-const MovieGrid = ({ onSelectMovie }) => {
+import { useNavigate } from "react-router-dom";
+const MovieGrid = () => {
   const { movieSearchValue } = useMovieContext();
   const [page, setPage] = useState(1);
   const { data, isLoading } = useMovieSearch(movieSearchValue , page);
+  const navigate = useNavigate(); 
+
+  function onSelectMovie(movie) {
+    console.log("Selected Movie", movie.imdbID);
+    navigate(`/movie/${movie.imdbID}`);
+  }
 
   if (isLoading) {
     return <SkeletonLoaderGrid/>

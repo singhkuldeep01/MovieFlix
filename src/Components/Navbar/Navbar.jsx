@@ -2,8 +2,11 @@ import React from 'react'
 import ThemeSelector from '../ThemeSelector/ThemeSelector'
 import SearchBar from '../SearchBar/SearchBar';
 
+import { useNavigate } from 'react-router-dom';
+
 function Navbar() {
     const [showSearchBar , setShowSearchBar] = React.useState(false);
+    const navigate = useNavigate();
   return (
     <div className="navbar bg-base-300 shadow-sm fixed w-full z-10">
   <div className="navbar-start">
@@ -23,7 +26,7 @@ function Navbar() {
   {
     showSearchBar ?
         <SearchBar/>
-    : <a className={`btn btn-ghost text-xl font-bold tracking-tighter transition-all duration-300 ${showSearchBar ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0'}`}>
+    : <a className={`btn btn-ghost text-xl font-bold tracking-tighter transition-all duration-300 ${showSearchBar ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0'}` } onClick={()=>{navigate('/')}}>
           <span className="text-primary">Movie</span>Flix
         </a>
   }

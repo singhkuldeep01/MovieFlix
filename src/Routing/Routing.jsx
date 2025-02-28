@@ -10,7 +10,7 @@ function Routing() {
     <Routes>
         <Route path='/' element = {<Layout />} >
             <Route index element={<Home />} />
-            <Route path=':movieId' element={<MovieDetailsPage />} />
+            <Route path='movie/:movieId' element={<MovieDetailsPage />} />
         </Route>
     </Routes>
   )
